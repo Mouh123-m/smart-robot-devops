@@ -1,0 +1,22 @@
+
+name: Smart Robot Docker CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  docker-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get project files
+        uses: actions/checkout@v6
+
+      - name: Build Docker image
+        run: docker build -t smart-robot:ci .
+
+      - name: Run tests inside Docker
+        run: docker run --rm smart-robot:ci
