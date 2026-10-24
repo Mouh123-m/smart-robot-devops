@@ -29,4 +29,4 @@ jobs:
           context: .
           push: true
           tags: ${{ vars.DOCKERHUB_USERNAME }}/smart-robot-devops:latest
-# Docker Hub publishing workflow
+# Docker Hub publishing workflowP
