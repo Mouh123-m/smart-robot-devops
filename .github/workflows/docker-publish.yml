@@ -28,8 +28,8 @@ jobs:
       - name: Build and publish image
         uses: docker/build-push-action@v7
         with:
-          context: .
-          push: true
-          tags: ${{ vars.DOCKERHUB_USERNAME }}/smart-robot-devops:latest
-
-        
+         context: .
+         push: true
+         tags: |
+          ${{ vars.DOCKERHUB_USERNAME }}/smart-robot-devops:latest
+          ${{ vars.DOCKERHUB_USERNAME }}/smart-robot-devops:1.0
